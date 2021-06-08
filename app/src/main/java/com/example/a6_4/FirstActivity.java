@@ -1,10 +1,12 @@
 package com.example.a6_4;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.InputType;
 import android.text.method.HideReturnsTransformationMethod;
 import android.text.method.PasswordTransformationMethod;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import androidx.appcompat.app.AppCompatActivity;
@@ -15,15 +17,23 @@ public class FirstActivity extends AppCompatActivity {
 
     private EditText edt_password;
     private ImageView img_pwdshow;
+    private Button btn;
     private boolean showPwd = false;//默认不显示密码
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.frist);
-
         initViews();
         initEvents();
+        btn = findViewById(R.id.btn);
+        btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(),MainActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
     private void initViews() {

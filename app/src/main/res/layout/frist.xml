@@ -1,17 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Android中EditText显示明文与密文的两种方式 -->
-<RelativeLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin">
 
     <!--  当之有一个EditText或者AutoCompleteTextView的时候，进入画面时是默认得到焦点的。 要想去除焦点，可以在auto之前加一个0像素的layout，并设置他先得到焦点。 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        android:addStatesFromChildren="true"
+        android:background="@drawable/comm_input_selector"
+        android:clickable="true"
+        android:focusable="true"
+        android:orientation="horizontal">
+        <EditText
+            android:id="@+id/edt_name"
+            android:layout_width="0.0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@null"
+            android:drawableLeft="@drawable/name"
+            android:drawablePadding="10dp"
+            android:hint="请输入用户名"
+            android:imeOptions="actionGo"
+            android:inputType="text"
+            android:text=""
+            android:textColor="#000000"
+            android:textColorHint="#8c8c8c"
+            android:textSize="18sp" />
+    </LinearLayout>
     <!-- 输入密码区域 -->
     <LinearLayout
         android:layout_width="match_parent"
@@ -55,5 +84,11 @@
             android:scaleType="fitCenter"
             android:src="@drawable/pwd_hidden" />
     </LinearLayout>
-
-</RelativeLayout>
+    <Button
+        android:id="@+id/btn"
+        android:layout_marginTop="30dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="登录"/>
+</LinearLayout>
