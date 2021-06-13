@@ -29,9 +29,6 @@ public class FragmentUtil {
                 fragment = new HomeFragment();
                 break;
             case 3:
-                fragment = new UCFragment();
-                break;
-            case 4:
                 fragment = new SettingFragment();
                 break;
         }

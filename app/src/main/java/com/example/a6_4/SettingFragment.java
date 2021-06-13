@@ -1,10 +1,12 @@
 package com.example.a6_4;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -24,16 +26,18 @@ import jp.wasabeef.glide.transformations.CropCircleTransformation;
  */
 
 public class SettingFragment extends Fragment {
-    private View view;
-
+    Button tuichu;
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         //加载系统里面的布局文件
-        return View.inflate(getActivity(),R.layout.activity_frag_shezhi,null);
-    }
-
-    @Override
-    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
-        super.onViewCreated(view, savedInstanceState);
+//        tuichu = view.findViewById(R.id.tuichu);
+//        tuichu.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent intent = new Intent(getContext(),FirstActivity.class);
+//                startActivity(intent);
+//            }
+//        });
+        return View.inflate(getActivity(),R.layout.activity_frag_uc,null);
     }
 }
